@@ -3,9 +3,11 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Hello, World!");
-        System.out.println("123");
-
+    for (int ost, i=0; i<1000; i++) {
+        ost=i%4;
+        if (ost==0) {continue;}
+        System.out.print(i+" ");
+        }
     }
+
 }
