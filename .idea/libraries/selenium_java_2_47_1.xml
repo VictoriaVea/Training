@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="selenium-java-2.47.1">
+    <CLASSES>
+      <root url="jar://D:/Selenium/selenium-java-2.47.1/selenium-2.47.1/selenium-java-2.47.1.jar!/" />
+      <root url="file://D:/Selenium/selenium-java-2.47.1/selenium-2.47.1/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Selenium/selenium-java-2.47.1/selenium-2.47.1/selenium-java-2.47.1-srcs.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Selenium/selenium-java-2.47.1/selenium-2.47.1/libs" recursive="false" />
+  </library>
+</component>
