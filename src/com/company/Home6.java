@@ -58,11 +58,15 @@ public class Home6 {
     public static boolean isListsEqual(ArrayList<String> s,ArrayList<String> f){
         boolean output=false;
         if (s.size()==f.size()) {
-            for (int i = 0; i < s.size(); i++) {
-                if (s.get(i).equals(f.get(i))) {
-                    output = true;
-                } else {
-                    output = false;
+            if (s.size()==0){
+                output=true;
+            } else {
+                for (int i = 0; i < s.size(); i++) {
+                    if (s.get(i).equals(f.get(i))) {
+                        output = true;
+                    } else {
+                        output = false;
+                    }
                 }
             }
         }
