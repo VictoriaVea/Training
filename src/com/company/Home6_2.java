@@ -1,6 +1,9 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Vea on 14.08.2015.
@@ -51,20 +54,20 @@ public class Home6_2 {
         // Test FAILED.
         // Expected: [1, 4, 3]
         // Actual:   [1, 2, 3]
-        test(Arrays.asList(6), stringsLength(Arrays.asList("Jordan")));
+        //test(Arrays.asList(6), stringsLength(Arrays.asList("Jordan")));
         // Test PASSED.
-        test(Arrays.asList(5, 3, 8), stringsLength(Arrays.asList("Harry", "Ron", "Hermione")));
+        //test(Arrays.asList(5, 3, 8), stringsLength(Arrays.asList("Harry", "Ron", "Hermione")));
         // Test PASSED.
-        test("[5, 5]", stringsLength(Arrays.asList("Jinny", "Lupin")).toString());
+        //test("[5, 5]", stringsLength(Arrays.asList("Jinny", "Lupin")).toString());
         // Test PASSED.
-        test(Arrays.asList(3, 6, 1, -60), reverseInts(Arrays.asList(-60, 1, 6, 3)));
+        //test(Arrays.asList(3, 6, 1, -60), reverseInts(Arrays.asList(-60, 1, 6, 3)));
         // Test PASSED.
-        prettyPrint(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge"), true);
+        //prettyPrint(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge"), true);
         // Vernon
         //  Dudley
         //   Petunia
         //    Madge
-        prettyPrint(reverse(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge")), false);
+        //prettyPrint(reverse(Arrays.asList("Vernon", "Dudley", "Petunia", "Madge")), false);
         //    Madge
         //   Petunia
         //  Dudley
@@ -79,7 +82,7 @@ public class Home6_2 {
         return "Hello Engineers!";
     }
 
-    public static void test(String expected, String actual) {
+    public static void test(String actual, String expected) {
         if (expected.equals(actual)) {
             System.out.println("Test PASSED.");
         }else {
@@ -88,19 +91,61 @@ public class Home6_2 {
     }
 
     public static String hello(String who) {
-        return "Hello"+who;
+        return "Hello "+who;
      }
 
     public static String hello(int howMany) {
-        // ???????? ??? ????
+        if (howMany==0) {
+            return "No one came.";
+        }else {
+            if (howMany == 1) {
+                return "Hello student!";
+            } else {
+                return "Hello to all " + howMany + " students!";
+            }
+        }
     }
+
+    public static String hello (String[] listed) {
+        String Output = "Hello ";
+        for (String i : listed) {
+            Output = Output + i + " ";
+        }
+        return Output+ "!";
+    }
+
     public static String hello(int howMany, String whom) {
-        // ???????? ??? ????
+        return "Hello to all "+howMany+" "+whom+"!";
     }
 
-    // ???????? ??????? ????
+    public static String hello(List <String> nameList) {
+        String nameset="Hello ";
+        for (int i=0;i<nameList.size()-2;i++){
+            nameset=nameset+nameList.get(i)+", ";
+        }
+        nameset=nameset+nameList.get(nameList.size()-1)+" and "+nameList.get(nameList.size());
+        return nameset+"!";
+    }
+
+    public static void test(List <Integer> L1, List <Integer> L2) {
+        if (L1.size() != L2.size()) {
+            System.out.println(L1.size()+","+L2.size());
+            System.out.println("Test FAILED.");
+        } else if (L1.size() == L2.size()) {
+            if (L1.size() == 0) {
+                System.out.println("Test PASSED.");
+            } else {
+                for (int i = 0; i < L1.size(); i++) {
+                    if (Objects.equals(L1.get(i), L2.get(i))) {
+                        System.out.println("Test PASSED.");
+                        System.out.println(L1.get(i));
+                    } else {
+                        System.out.println("Test FAILED."+"/n"+"Expected: "+L1+"/n"+"Actual:   "+L2);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
-
-
-}
