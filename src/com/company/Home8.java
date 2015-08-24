@@ -36,12 +36,12 @@ public class Home8 {
        drv.get("https://stage.tether.to");
        String pLogin="//md-input-container[label[@for='login']]/input[@type='text']";
        String pPwd="//md-input-container/input[@type='password']";
-       String pLoginError="//md-input-container[label[@for='login']]/child::div[@ng-messages]";
-       String pPwdError="//md-input-container[label[@for='password']]/child::div[@ng-messages]";
+       String pLoginError="//div[@ng-messages='loginForm.username.$error']/div";
+       String pPwdError="//div[@ng-messages='loginForm.password.$error']/div";
        String button="//form/button[contains (@class,'submit-btn')]";
        WebElement login=findElement(pLogin, drv);
        login.sendKeys("");
-       WebElement pwd = findElement(pPwd,drv);
+       WebElement pwd = findElement(pPwd, drv);
        pwd.sendKeys("");
        WebElement error = findElement(pLoginError,drv);
        System.out.println(error.getText());
@@ -54,7 +54,6 @@ public class Home8 {
        System.out.println(error.getText());
        pwd.sendKeys("fff");
        slp(1);
-       error = findElement(pPwdError,drv);
 
        List <WebElement> allPwdErrors=drv.findElements(By.xpath(pPwdError));
        System.out.println(allPwdErrors.size());
@@ -65,7 +64,8 @@ public class Home8 {
        error = findElement(pLoginError,drv);
        System.out.println(error.getText());
        login.sendKeys("qwe");
-       List <WebElement> allLoginErrors=drv.findElements(By.xpath(pLoginError));
+       slp(1);
+       List <WebElement> allLoginErrors = drv.findElements(By.xpath(pLoginError));
        System.out.println(allLoginErrors.size());
 
        WebElement wButton=drv.findElement(By.xpath(button));
