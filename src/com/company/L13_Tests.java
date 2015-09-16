@@ -56,4 +56,22 @@ public class L13_Tests {
         Assert.assertEquals("mKJAakDvwbhi6@1a",L13.getPassword());
         L13.cdrv.quit();
     }
+    @Test
+    public void Test6 (){
+        L13.initDrv(siteLink);
+        getMaster(multi("a", 200));
+        getSite(multi("b", 200));
+        genByButton();
+        slp(2);
+        Assert.assertEquals("sQCldi8ELfv+y@1a", getPassword());
+    }
+
+    public static String multi(String ss, int timez){
+        String ssLong="";
+        for (int i=0;i<timez;i++){
+            ssLong+="a";
+        }
+        return ssLong;
+    }
+
 }
