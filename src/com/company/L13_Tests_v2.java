@@ -1,5 +1,6 @@
 package com.company;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,6 @@ public class L13_Tests_v2 {
         getSite("testlogin",cdrv);
         genByButton(cdrv);
         System.out.println(getPassword(cdrv));
-        cdrv.quit();
     }
     @Test
     public void Test1 (){
@@ -25,7 +25,6 @@ public class L13_Tests_v2 {
         getSite("google.com",cdrv);
         genByButton(cdrv);
         System.out.println(getPassword(cdrv));
-        cdrv.quit();
     }
     @Test
     public void Test2 (){
@@ -33,7 +32,6 @@ public class L13_Tests_v2 {
         getSite("google.com",cdrv);
         genByButton(cdrv);
         System.out.println(getPassword(cdrv));
-        cdrv.quit();
     }
 
     @Test
@@ -43,7 +41,6 @@ public class L13_Tests_v2 {
         genByEnter(cdrv);
         slp(2);
         Assert.assertEquals("mKJAakDvwbhi6@1a", getPassword(cdrv));
-        cdrv.quit();
     }
 
     @Test
@@ -53,7 +50,6 @@ public class L13_Tests_v2 {
         genByButton(cdrv);
         slp(2);
         Assert.assertEquals("mKJAakDvwbhi6@1a",getPassword(cdrv));
-        cdrv.quit();
     }
 
     public static void getMaster(String valuePwd, WebDriver drv){
@@ -95,6 +91,11 @@ public class L13_Tests_v2 {
         System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
         cdrv=new ChromeDriver();
         cdrv.get(siteLink);
+    }
+    
+    @After
+    public void ending(){
+        cdrv.quit();
     }
 
     public WebDriver cdrv;
