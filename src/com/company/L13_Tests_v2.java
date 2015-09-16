@@ -97,5 +97,5 @@ public class L13_Tests_v2 {
         cdrv.get(siteLink);
     }
 
-    WebDriver cdrv;
+    public WebDriver cdrv;
 }
